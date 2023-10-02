@@ -16,7 +16,7 @@ TEST(BarTest, ConstructorWithSizeAndCocktails) {
     Cocktail cocktails[3];
     cocktails[0] = Cocktail("Cocktail1", 500, 8.0);
     cocktails[1] = Cocktail("Cocktail2", 250, 12.0);
-    cocktails[2] = Cocktail("Cocktail3", 350, 10.0);
+    cocktails[2] = Cocktail("Cocktail3", 350, 10.5);
 
     Bar bar(3, 3, cocktails);
     EXPECT_EQ(bar.empty(), Lab2::Bar::Statement::FULL);
@@ -24,7 +24,7 @@ TEST(BarTest, ConstructorWithSizeAndCocktails) {
     bar2 = bar;
     EXPECT_EQ(bar2.empty(), Lab2::Bar::Statement::FULL);
     EXPECT_EQ(bar2.find_degree(0, 9).get_name(), "Cocktail1");
-    EXPECT_EQ(bar2.find_degree(10, 12).get_degree(), 11);
+    EXPECT_NEAR(bar2.find_degree(10, 12).get_degree(), ( 12.0 + 10.5) / 2, 0.5);
 }
 
 // Test the += operator to add Cocktails to the Bar
