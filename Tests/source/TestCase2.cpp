@@ -8,7 +8,6 @@ using namespace Lab2;
 TEST(BarTest, ConstructorWithSize) {
     Bar bar(5);
     EXPECT_EQ(bar.empty(), Lab2::Bar::Statement::EMPTY);
-   // EXPECT_EQ((bar.find_degree(10.0, 11.0)).get_volume(), 0);
 }
 
 // Test the Bar constructor with size, initial size, and an array of Cocktails
@@ -24,7 +23,7 @@ TEST(BarTest, ConstructorWithSizeAndCocktails) {
     bar2 = bar;
     EXPECT_EQ(bar2.empty(), Lab2::Bar::Statement::FULL);
     EXPECT_EQ(bar2.find_degree(0, 9).get_name(), "Cocktail1");
-    EXPECT_NEAR(bar2.find_degree(10, 12).get_degree(), ( 12.0 + 10.5) / 2, 0.5);
+    EXPECT_NEAR(bar2.find_degree(10, 12).get_degree(), 11.25 , 0.01);
 }
 
 // Test the += operator to add Cocktails to the Bar
