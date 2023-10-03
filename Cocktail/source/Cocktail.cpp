@@ -55,6 +55,7 @@ namespace Lab2{
         size_t v = std::min(pour_volume_, second.volume_);
         volume_ += v;
         second.volume_ -= v;
+        degree_ = (degree_ + second.degree_) / 2;
         return *this;
     }
 
