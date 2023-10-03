@@ -44,7 +44,7 @@ TEST(CocktailTest, OperatorPlus) {
     cocktail1 + cocktail2;
     EXPECT_EQ(cocktail1.get_name(), "Mojito+Daiquiri");
     EXPECT_EQ(cocktail1.get_volume(), 450);
-    EXPECT_NEAR(cocktail1.get_degree(), (11.0 + 12.0)/2, 0.5);
+    EXPECT_NEAR(cocktail1.get_degree(), 11.5 , 0.01);
 }
 
 // Test operator>
@@ -56,7 +56,7 @@ TEST(CocktailTest, OperatorGreater) {
 
     EXPECT_EQ(cocktail1.get_name(), "Martini");
     EXPECT_EQ(cocktail1.get_volume(), 280);
-    EXPECT_EQ(cocktail1.get_degree(), 14.0);
+    EXPECT_NEAR(cocktail1.get_degree(), 13.25, 0.01);
 
     EXPECT_EQ(cocktail2.get_name(), "Negroni");
     EXPECT_EQ(cocktail2.get_volume(), 100);
@@ -84,7 +84,7 @@ TEST(CocktailTest, Pour) {
 
     EXPECT_EQ(cocktail1.get_volume(), 300);
     EXPECT_EQ(cocktail2.get_volume(), 150);
-    EXPECT_NEAR(cocktail1.get_degree(), (10 + 12) / 2, 0.5);
+    EXPECT_NEAR(cocktail1.get_degree(), 11.0, 0.01);
 }
 
 
